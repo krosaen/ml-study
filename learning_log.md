@@ -1,4 +1,4 @@
-Learning diary
+Learning log. I don't anticipate this being of much use to anyone (nor much long term use to even myself), but it's helpful to reflect on what I studied each day for a bit to help make it stick.
 
 # 3/18
 
