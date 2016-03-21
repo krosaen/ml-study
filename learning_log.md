@@ -75,10 +75,14 @@ This allows one to quickly see that children of smokers are much more likely to 
 
 Showing conditional row percentages isn't as useful as it's reversing the supposed affects (how much more likely is a parent to smoke given their child does):
 
+** WRONG **
+
 <img src="ll-files/parent-child-smoking-perc-wrong.gif" width=600>
 
 
 And showing percentages by dividing by the total number of students misses the point completely:
+
+** WRONG **
 
 <img src="ll-files/parent-child-smoking-perc-wrong2.gif" width=600>
 
