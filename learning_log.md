@@ -49,11 +49,15 @@ When examining how a categorical variable affects a quantitative variable, it's 
 
 When I [compared the distribution of margin of victory](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb) across 9 NBA teams in the eastern conference, that could be viewed as examining two variables: team (categorical) and margin of victory (quantitative).
 
-<img src="ll-files/team-victory-margin.png" width=300>
+<img src="ll-files/team-victory-margin.png" width=400>
 
 ##### C->C
 
+C->C can be examined with a 2 way table, rows are the explanatory, columns response, and each cell the value for that combination. The example in the course is examining the relationship between gender and body image (about right / overweight / underweight). The sum is provided for each row and column as well.
 
+There may be a different number of data points available for each category, it's better to compare percentages than absolute numbers.
+
+<img src="ll-files/gender-body-image.gif" width=520>
 
 ## Fri 3/18
 
