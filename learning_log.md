@@ -34,7 +34,8 @@ Techniques:
 - Identify explanatory and response variables given a description of a study or question (e.g in "does IQ influence favorite music genre", "music taste" is the response variable)
 - Identify role-response from two variable 
 - Visualize C->Q using side-by-side box-plots
-- Examine C->C using tables.
+- Examine C->C using tables and conditional percentages within explanatory variable values
+- Examine Q->Q using scatter plots, placing explanatory variable on x-axis
 
 #### Role-type 
 
@@ -85,6 +86,30 @@ And showing percentages by dividing by the total number of students misses the p
 ** WRONG **
 
 <img src="ll-files/parent-child-smoking-perc-wrong2.gif" width=600>
+
+This also seems to me like the first foray into conditional probability; in these cases we're looking at what is the probability of an outcome of the response variable given a particular outcome of the explanatory variable.
+
+##### Q->Q
+
+When examining Q->Q relationship, we make a scatter plot with the explanatory variable on the horizontal x-axis. Similar to how we examine a distribution for a single variable: its shape, center, spread, and identifying outliers, we examine the scatterplot with an eye towards:
+
+- direction: positive, negative?
+- form: does there appear to be a relationship? Is it a linear or curve-linear one?
+- strength: how strong? e.g how tightly do the points fit the general line?
+- identifying outliers: which points do not match the overall relationship?
+
+Here's an example plot examining age and how far from a sign an individual can be and still read it:
+
+<img src="ll-files/age-vision-scatterplot.gif" width=400>
+
+It has a moderately strong negative linear relationship and there don't appear to be any outliers.
+
+
+IPython todos:
+
+- show a table with percentages
+- scatter plots
+
 
 ## Fri 3/18
 
