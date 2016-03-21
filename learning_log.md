@@ -17,7 +17,7 @@ A couple of other notes before I dive in today:
 
 ### EDA: examining relationships
 
-Last week was all about exploring distributions of a single variable / feature. The next section is about examining relationships between two. I imagine this will be scatterplots, and eye balling whether or not there appears to be a linear relationship.
+Last week was all about exploring distributions of a single variable / feature. The next section is about [examining relationships between two](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/courseware/eda_er/_m2_examining_relationships/). I imagine this will be scatterplots, and eye balling whether or not there appears to be a linear relationship.
 
 - independent variable aka explanatory variable
 - dependent variable aka response variable
@@ -25,12 +25,12 @@ Last week was all about exploring distributions of a single variable / feature. 
 Concepts:
 
 - Explanatory / response (aka independent / dependent) variables. This is the variable's "role"
-- Role-type classification; breaking explanatory and response variables into categorical / quantiative
+- Classify two variable data analysis scenario by its role-type (e.g C->Q is categorical -> quantitative)
 
 Techniques:
 
 - Identify explanatory and response variables given a description of a study or question (e.g in "does IQ influence favorite music genre", "music taste" is the response variable)
-- Identify 
+- Identify role-response from two variable 
 
 #### Role-type 
 
@@ -42,6 +42,16 @@ Two variable analysis can be classified by each of the variables type (categoric
 - C->C
 - Q->Q
 - C->Q
+
+##### C->Q
+
+When examining how a categorical variable affects a quantitative variable, it's similar to comparing multiple quantitative variables, and using a side by side box-plots to compare their distributions is the way to go, one for each category. The example in the course is looking at how the type of hotdog influences the calorie count.
+
+When I [compared the distribution of margin of victory]() across 9 NBA teams in the eastern conference, that could be viewed as examining two variables: team (categorical) and margin of victory (quantitative).
+
+<img src="ll-files/team-victory-margin.png" width=300>
+
+##### C->C
 
 
 
