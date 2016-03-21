@@ -1,6 +1,51 @@
-Learning log. I don't anticipate this being of much use to anyone (nor much long term use to even myself), but it's helpful to reflect on what I studied each day for a bit to help make it stick.
+# Daily Learning log. 
 
-# 3/18
+I don't anticipate this being of much use to anyone (nor much long term use to even myself), but it's helpful to reflect on what I studied each day for a bit to help make it stick.
+
+## Mon 3/21
+
+Reflecting back on last week, I spent 3 days on basic stats and 2 on the ML book. I'm really tempted to keep on 100% on the ML book, it's more fun :) But I believe having a strong foundation in probability and stats will be important in the long run as I get closer to the underlying stats for bayesian methods, graphical models etc. So I will resume with [Stanford's online course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/info) and perhaps this week I will get far enough that it will begin to overlap with the [All of Statistics book](http://www.stat.cmu.edu/~larry/all-of-statistics/) that I intend to work through along with some problem sets available online within some of the CMU probability courses (e.g [here's one](http://www.stat.cmu.edu/~larry/=stat705/)), which begins with random variables, conditional probability and Bayes' theorem. 
+
+I also got the hang of IPython notebooks and some of the basic graphing functions from matplotlib. It's really a great tool and I'm really happy that Python / IPython / numpy / scikit-learn are among the most popular / powerful tools for data sciencey / ML stuff. On a related note, at the end of last week I picked up a couple of books: [Fluent Python](http://www.amazon.com/gp/product/1491946008) and [Python for Data Analysis](http://www.amazon.com/gp/product/1449319793). The first has been great for getting reacquainted with Python and some of the newer features of Python 3 after being away from it for a few years in Ruby land—I used Python for Real Time Farms before joining Food52, a (mostly) Ruby shop. The second will help give a broad overview of numppy, pandas and a few of the other tools that will be used often in the ML book and in exploring stuff within IPython notebooks. 
+
+First impressions coming back to Python from Ruby: I love list comprehensions and slice syntax and have greater respect for the thought leaders in the Python community / find myself agreeing with the recommended way of doing things more often than with Ruby. But I'm already missing the symbol type (e.g for dictionary keys) from Ruby, as well as the  block syntax that makes threading data through a series of transformations via the functions available for all enumerable types in the standard library so nice. I will have to see if I can find a way to make expressing such computations as palatable in Python as I get back in more deeply. The libraries available for Python for scientific computing seem to be superior, whereas the community around web development in Ruby is prolific if occasionally sloppy. Python is the obvious choice for ML studies even though it looks like I [could](http://sciruby.com) [force it](https://github.com/SciRuby/iruby) with Ruby to a certain degree if I really wanted to.
+
+A couple of other notes before I dive in today:
+
+- I'd like to get a static website setup to host a blog and this learning log, but it doesn't seem pressing.
+- I've been thinking that the 3rd prong of these studies will be a larger project and have plenty of ideas, but I think it makes sense to hold off for another week or two before alotting team each week for that. I'd like to have a bit more practical experience with the scikit-learn libraries first and also don't want to divert any time from probability / stats and the ML book studies until I have some more momentum.
+
+### EDA: examining relationships
+
+Last week was all about exploring distributions of a single variable / feature. The next section is about examining relationships between two. I imagine this will be scatterplots, and eye balling whether or not there appears to be a linear relationship.
+
+- independent variable aka explanatory variable
+- dependent variable aka response variable
+
+Concepts:
+
+- Explanatory / response (aka independent / dependent) variables. This is the variable's "role"
+- Role-type classification; breaking explanatory and response variables into categorical / quantiative
+
+Techniques:
+
+- Identify explanatory and response variables given a description of a study or question (e.g in "does IQ influence favorite music genre", "music taste" is the response variable)
+- Identify 
+
+#### Role-type 
+
+![img](ll-files/role-type-diagram.png)
+
+Two variable analysis can be classified by each of the variables type (categorical or quantitative) and which variable is the explanatory (independent) and which is the response (dependent):
+
+- C->Q (categorical explanatory variable, quantitative response variable)
+- C->C
+- Q->Q
+- C->Q
+
+
+
+## Fri 3/18
 
 Kept at it with chapter 2 of the python ML book today, which covers implementing a basic single perceptron algorithm. It starts with one of the original training algorithms where the weights are updated using a scaling factor, and follows up with an improved approach using gradient descent: something that is core to many optimization steps across ML, including within the backpropogation algorithm of neural networks.
 
@@ -8,7 +53,7 @@ I took my time with it and refactored the author's OO solution into what I think
 
 One thing that tripped me up was the helper function `plot_decision_regions`. I updated the training function to return a log of the weights as they evolved during the iterations, and I wanted to plot how the decision regions got closer to 100% during execution. However, it only seems to plot properly at the final step. I think I need to read more about matplotlib's contourf function before I can get to the bottom of it. For now, I think I'll move on.
 
-# 3/17
+## Thu 3/17
 
 Switching gears today and beginning to work my way through Python Machine Learning. I read through this before but now want to go through it again more slowly, trying out each example myself and perhaps applying the techniques to new datasets as I go. I chose this book because it has a nice balance of conceptual background and practical application of libraries. It also has a great overview of the important details of applying an algorithm, including data pre-processing, dimensionality reduction, evaluating the model by comparing one trained on one portion of the dataset against an unseen segment (e.g does it seem to generalize), hyperparamter tuning etc. These concerns were also covered in Andrew NG's machine learning class that I took part of a couple of years ago and while I by no means remember everything from that course, I remember enough to know that this book does a good job covering these topics.
 
@@ -16,7 +61,7 @@ Working my way through this book and familiarizing myself with many of the algor
 
 Anyways, today it's chapters 1 and 2. Chapter 1 includes an overview of ML, how to get setup with the necessary tools and the like. I'm already setup with an install of python3, scikit-learn and Jupyter for IPython notebooks. I recommend using [anaconda](https://docs.continuum.io/anaconda/index) to quickly get setup with clean python installs, jupyter and the relevant libraries. I love jetbrains products and am using PyCharm for any python work not done directly in IPython notebooks. Every example in the book is [already available](https://github.com/rasbt/python-machine-learning-book) in notebook form, but I will work through [in my own](https://github.com/krosaen/ml-study/tree/master/python-ml-book) notebooks anyways.
 
-## Chapter 1 notes
+### Chapter 1 notes
 
 ML field overview:
 - supervised learning: generalize from labeled data
@@ -46,11 +91,11 @@ One thing that's interesting to think about is how the dataset is segmented for 
 
 It's also worth noting that hyperparameter tuning is tuning is not the same thing as optimizing the weights in whatever model you are training. From the book, "Intuitively, we can think of those hyperparameters as parameters that are not learned from the data but represent the knobs of a model that we can turn to improve its performance..."
 
-## Chapter 2 notes
+### Chapter 2 notes
 
 This chapter dives into implementing some basic learning algorithms based on a single perceptron. I spent a couple of hours running the same code as the book provides, but slowing down to grok it. I needed some background knowledge about numpy and pandas data structures including data frames and numpy's fast vectorized multi-dimensional arrays.
 
-# 3/16
+## Wed 3/16
 
 Today I wrapped up playing with the NBA game net rating data set in a Jupyter IPython notebook ([on github](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb)). Not exactly setting the world on fire but was nice to get the basics going with Jupyter notebooks and to figure out how to make it viewable on github.
 
@@ -67,11 +112,11 @@ Techniques:
 - report what % fall within 1, 2 and 3 standard deviations
 - Given mean and std deviation, apply standard rule to answer questions like: what range will 95% of the observations fall? What % of observations will fall above 1 std deviation from mean?
 
-# 3/15
+## Tue 3/15
 
 Today I want to put one of the skills into practice by producing a box plot with some real data using a python notebook. I think it would be interesting to compare the box plots of the point delta for nba wins of various teams. 
 
-# 3/14
+## Mon 3/14
 
 Today I'm continuing to plot my big picture curriculum focusing on three areas:
 
@@ -85,7 +130,7 @@ One question I got wrong off the bat in this basic stats course was in determini
 
 Another course I took another look at today was [Stanford's statistical learning course](https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about). It covers some of the same techniques I will be looking at as I work through [Python Machine Learning](https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning). I will check back to see if any of the videos help in my understanding as I proceed.
 
-## Stats basics 
+### Stats basics 
 
 Today I covered basic exploratory analysis of categorical and continuous variables (up through measures of spread [here](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/courseware/intro/9476c98a36d34dec90e69994d367e554/). 
 
@@ -111,7 +156,7 @@ Skills & Techniques:
 - compare two or more datasets by plotting their box plots on the same graph next to each other
 - calculate the standard deviation of a data set
 
-### Overview 
+#### Overview 
 
 There's a nice diagram to outline the course that puts everything about the course into context. The course covers 4 aspects of statistics:
 
@@ -122,7 +167,7 @@ There's a nice diagram to outline the course that puts everything about the cour
 3 & 4: Probability and inference: drawing conclusions about the entire population from the observed data collected in our sample.
 
 
-### Data and variables
+#### Data and variables
 
 Data are pieces of information about an individual or object, and these pieces are organized into variables. A variable is a characteristic of an individual / object, such as eye color, age, number of hours spent studying for the final exam last for a particular course last fall, etc. 
 
@@ -138,13 +183,13 @@ Variables can be further classified into 4 progressively quantifiable types by t
 - interval: can be ordered, difference between two can be quantified
 - ratio: has notion of zero value. Can find the mean.
 
-### Summarizing data: examining distributions
+#### Summarizing data: examining distributions
 
-#### One categorical variable
+##### One categorical variable
 
 Histograms: number of items in each category.
 
-#### One quantitative variable
+##### One quantitative variable
 
 - histograms but need to pick bins
 - stem plots: an algorithm for creating a histogram like visualization by slicing by decimals, which guides you to choosing the size of the bins. Also useful because it preserves the data (each datum is stacked and visible in the plot)
