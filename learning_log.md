@@ -160,6 +160,8 @@ Skills & Techniques:
 
 There's a nice diagram to outline the course that puts everything about the course into context. The course covers 4 aspects of statistics:
 
+<img src="ll-files/intro_stats_online_inference.png" width=730>
+
 1. Getting / producing data: sampling from a population of "all" data to get a dataset.
 
 2. Exploratory data analysis (EDA): sizing up and summarizing the data set to get a feel for its characteristics.
