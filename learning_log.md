@@ -55,9 +55,9 @@ When I [compared the distribution of margin of victory](https://github.com/krosa
 
 C->C can be examined with a 2 way table, rows are the explanatory, columns response, and each cell the value for that combination. The example in the course is examining the relationship between gender and body image (about right / overweight / underweight). The sum is provided for each row and column as well.
 
-There may be a different number of data points available for each category, it's better to compare percentages than absolute numbers.
+There may be a different number of data points available for each category, it's better to compare percentages than absolute numbers. In addition to the tabular form, visualizing these in a side-by-side bar chart helps too:
 
-<img src="ll-files/gender-body-image.gif" width=520>
+<img src="ll-files/gender-body-image2.gif" width=520>
 
 ## Fri 3/18
 
