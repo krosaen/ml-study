@@ -47,7 +47,7 @@ Two variable analysis can be classified by each of the variables type (categoric
 
 When examining how a categorical variable affects a quantitative variable, it's similar to comparing multiple quantitative variables, and using a side by side box-plots to compare their distributions is the way to go, one for each category. The example in the course is looking at how the type of hotdog influences the calorie count.
 
-When I [compared the distribution of margin of victory]() across 9 NBA teams in the eastern conference, that could be viewed as examining two variables: team (categorical) and margin of victory (quantitative).
+When I [compared the distribution of margin of victory](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb) across 9 NBA teams in the eastern conference, that could be viewed as examining two variables: team (categorical) and margin of victory (quantitative).
 
 <img src="ll-files/team-victory-margin.png" width=300>
 
