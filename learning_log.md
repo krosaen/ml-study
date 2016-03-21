@@ -34,7 +34,7 @@ Techniques:
 
 #### Role-type 
 
-![img](ll-files/role-type-diagram.png =300x)
+<img src="ll-files/role-type-diagram.png width=300>
 
 Two variable analysis can be classified by each of the variables type (categorical or quantitative) and which variable is the explanatory (independent) and which is the response (dependent):
 
