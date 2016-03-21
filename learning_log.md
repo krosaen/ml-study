@@ -6,6 +6,8 @@ I don't anticipate this being of much use to anyone (nor much long term use to e
 
 Reflecting back on last week, I spent 3 days on basic stats and 2 on the ML book. I'm really tempted to keep on 100% on the ML book, it's more fun :) But I believe having a strong foundation in probability and stats will be important in the long run as I get closer to the underlying stats for bayesian methods, graphical models etc. So I will resume with [Stanford's online course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/info) and perhaps this week I will get far enough that it will begin to overlap with the [All of Statistics book](http://www.stat.cmu.edu/~larry/all-of-statistics/) that I intend to work through along with some problem sets available online within some of the CMU probability courses (e.g [here's one](http://www.stat.cmu.edu/~larry/=stat705/)), which begins with random variables, conditional probability and Bayes' theorem. 
 
+The Stanford stats intro course is feeling borderline too elementary to bother with. However, I learn a couple of things here and there, and can move through it quickly, so I will continue on.
+
 I also got the hang of IPython notebooks and some of the basic graphing functions from matplotlib. It's really a great tool and I'm really happy that Python / IPython / numpy / scikit-learn are among the most popular / powerful tools for data sciencey / ML stuff. On a related note, at the end of last week I picked up a couple of books: [Fluent Python](http://www.amazon.com/gp/product/1491946008) and [Python for Data Analysis](http://www.amazon.com/gp/product/1449319793). The first has been great for getting reacquainted with Python and some of the newer features of Python 3 after being away from it for a few years in Ruby land—I used Python for Real Time Farms before joining Food52, a (mostly) Ruby shop. The second will help give a broad overview of numppy, pandas and a few of the other tools that will be used often in the ML book and in exploring stuff within IPython notebooks. 
 
 First impressions coming back to Python from Ruby: I love list comprehensions and slice syntax and have greater respect for the thought leaders in the Python community / find myself agreeing with the recommended way of doing things more often than with Ruby. But I'm already missing the symbol type (e.g for dictionary keys) from Ruby, as well as the  block syntax that makes threading data through a series of transformations via the functions available for all enumerable types in the standard library so nice. I will have to see if I can find a way to make expressing such computations as palatable in Python as I get back in more deeply. The libraries available for Python for scientific computing seem to be superior, whereas the community around web development in Ruby is prolific if occasionally sloppy. Python is the obvious choice for ML studies even though it looks like I [could](http://sciruby.com) [force it](https://github.com/SciRuby/iruby) with Ruby to a certain degree if I really wanted to.
@@ -31,6 +33,8 @@ Techniques:
 
 - Identify explanatory and response variables given a description of a study or question (e.g in "does IQ influence favorite music genre", "music taste" is the response variable)
 - Identify role-response from two variable 
+- Visualize C->Q using side-by-side box-plots
+- Examine C->C using tables.
 
 #### Role-type 
 
@@ -58,6 +62,25 @@ C->C can be examined with a 2 way table, rows are the explanatory, columns respo
 There may be a different number of data points available for each category, it's better to compare percentages than absolute numbers. In addition to the tabular form, visualizing these in a side-by-side bar chart helps too:
 
 <img src="ll-files/gender-body-image2.gif" width=520>
+
+In choosing the percentages for each cell, the denominator should be the total for a given category of the explanatory variable. The course uses an example of looking at whether a student's smoking habits are influenced by their parents'. Here are the numbers:
+
+<img src="ll-files/parent-child-smoking-numbers.gif" width=600>
+
+In order to see how the parents' choice influences their children, you want to show the percentages within each column (or "conditional column percentages")
+
+<img src="ll-files/parent-child-smoking-perc.gif" width=600>
+
+This allows one to quickly see that children of smokers are much more likely to smoke (20% vs 14%). 
+
+Showing conditional row percentages isn't as useful as it's reversing the supposed affects (how much more likely is a parent to smoke given their child does):
+
+<img src="ll-files/parent-child-smoking-perc-wrong.gif" width=600>
+
+
+And showing percentages by dividing by the total number of students misses the point completely:
+
+<img src="ll-files/parent-child-smoking-perc-wrong2.gif" width=600>
 
 ## Fri 3/18
 
