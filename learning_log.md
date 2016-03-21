@@ -104,11 +104,18 @@ Here's an example plot examining age and how far from a sign an individual can b
 
 It has a moderately strong negative linear relationship and there don't appear to be any outliers.
 
+In addition, you can examine another categorical variable atop a scatter plot by labeling it. Here's an example comparing two quantitative variiables, sodium and calories, and labeling them by category (meat, beef or poultry):
+
+<img src="ll-files/hotdog-scatter.png" width=400>
+
+Side note: labeled scatter plots are common in the ML book as you are trying to learn a function that will recognize the labels and a 2-d plot is great for building intuition (even as in practice you are working with many more features).
+
 
 IPython todos:
 
 - show a table with percentages
 - scatter plots
+- labeled scatter plot
 
 
 ## Fri 3/18
