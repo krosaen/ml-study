@@ -36,6 +36,8 @@ Techniques:
 - Visualize C->Q using side-by-side box-plots
 - Examine C->C using tables and conditional percentages within explanatory variable values
 - Examine Q->Q using scatter plots, placing explanatory variable on x-axis
+- Examine a 3rd dimension on a scatter plot by labelling each point with its category
+- Interpret the linear correlation two variables by looking at a scatter plot and the correlation coefficient. You should be able to get a sense of whether they are linearly related, and if so, whether it's a positive or negative relationship. The correlation coefficient quantifies the strength of the correlation as it's hard to assess this precisely by eye-balling it.
 
 #### Role-type 
 
@@ -110,12 +112,60 @@ In addition, you can examine another categorical variable atop a scatter plot by
 
 Side note: labeled scatter plots are common in the ML book as you are trying to learn a function that will recognize the labels and a 2-d plot is great for building intuition (even as in practice you are working with many more features).
 
+##### Linear relationships
+
+[Course section](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/courseware/eda_er/_m5_linear/)
+
+Examining the strength of a linear relationship by eye balling a scatter plot is tough; for example the same data set viewed at different resolutions can look "stronger" to our eyes because it bunches together more closely.
+
+<img src="ll-files/same-scatter-linear.gif" width-350>
+
+Instead we can look at a data set's correlation coefficient (r), which is calculated by taking the average of a pairwise computation of the two data sets, multiplying:
+
+((xi - x_avg)/std_dev_x) * ((yi - y_avg)/std_dev_y))
+
+For a given xi, we're looking at how much it deviates from the mean divided by the standard deviation which scales its deviation. A given xi should deviate from its mean by the same amount of the corresponding yi for xi and yi to be correlated.
+
+The value ranges from -1 to 1, -1 being a very strong negative relationship, 0 being no relationship, 1 being a strong positive relationship. 
+
+Some things about r:
+- r is a unitless value.
+- it only measures the strength of *linear* relationships; a perfectly fit quadratic will appear to have a weak linear relationship. So if r is 0, it only means the two variables have a weak *linear* relationship and it says nothing about general correlation.
+- similarly, a value of r close to 1 or -1 is not sufficient to say the relation ship is linear; it could also be curve-linear (side note, "curve linear" seems like a hand wavy concept and I'm looking forward to getting more sophisticated)
+- outliers can quickly take down r
+
+###### Linear regression
+
+The correlation coefficient is clearly limited, instead we can find the best fit line for a data set that minimizes the squared error. We can use this line / function to predict the value of the dependent variable for a given hypothetical value for the predictive variable.
+
+The course runs through a review of algebra, slope intercept etc. Once you have the slope and intercept of the best fit line, you can use it to predict values of y for the x etc.
+
+Important note: it is only considered prudent to predict values for inputs within the range of data used to compute the best fit line; e.g if your data set is looking at the ability to read a sign from a distance given age, and your data has entries for people ranging from 15 to 45, it is bunk to *extrapolate* and predict the distance of viewing for someone how is 60.
+
+Interpolation is ok, extrapolation not so much. Obligatory XKCD reference:
+
+<img src="http://imgs.xkcd.com/comics/extrapolating.png" width=460>
+
+##### Correlation
+
+Yes correlation does not imply causation blah blah, there could be another "lurking" variable underlying the relationship. A scatterplot that shows clusters of data may indicate there's another variable that is important for understanding your data or that would have a higher correlation with your response variable.
+
+##### Simpsons paradox
+
+Adding in the lurking variable can reverse the previous direction of the association. That is, if you are looking just at A vs B (say, graduation rate vs college), you might see that people who attend one college (let's say MSU) have a higher graduation rate than another (let's say University of Michigan). It's possible that if you segmented the data by major, that in every single major, the graduation rate at umich is higher than MSU, even if the overall graduation rate at MSU is higher. This would be an instance of Simpsons Paradox, and underscores the danger of presuming causation.
+
+Here's a nice clean example from [the wikipedia article](https://en.wikipedia.org/wiki/Simpson%27s_paradox).
+
+<img src="ll-files/simpsons-paradox.png" width=500>
+
+Adding in another variable can also help us deepen our understanding of a relationship even if the direction of the relationship does not change. 
 
 IPython todos:
 
 - show a table with percentages
 - scatter plots
 - labeled scatter plot
+- plot least square regression line
 
 
 ## Fri 3/18
