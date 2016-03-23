@@ -11,8 +11,7 @@ To solidify the two variable analysis concepts from earlier in the week, spent s
 - comparing two stat categories in a Q->Q scatter plots with best fit linear regression lines and correlation coefficients (also adding 3rd C dimension by labeling player positions)
 - some C->Q comparisons of stats across guard / forward / center positions
 
-IPython, numpy and scipy continue to shine, was really easy to find examples of making scatterplots and fitting regression lines. Check out the notebook [here]()
-
+IPython, numpy and scipy continue to shine, was really easy to find examples of making scatterplots and fitting regression lines, and has been fun getting my Python legs back. Check out the notebook [here](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-player-stats/NBA%20Player%20Stats.ipynb).
 
 
 ## Mon 3/21
