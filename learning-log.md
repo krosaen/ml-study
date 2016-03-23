@@ -2,6 +2,19 @@
 
 I don't anticipate this being of much use to anyone (nor much long term use to even myself), but it's helpful to reflect on what I studied each day for a bit to help make it stick.
 
+
+
+## Wed 3/23
+
+To solidify the two variable analysis concepts from earlier in the week, spent some time looking at Q->Q comparison of player stats from the 2014-2015 NBA season (spent some time Monday getting the data set). 
+
+- comparing two stat categories in a Q->Q scatter plots with best fit linear regression lines and correlation coefficients (also adding 3rd C dimension by labeling player positions)
+- some C->Q comparisons of stats across guard / forward / center positions
+
+IPython, numpy and scipy continue to shine, was really easy to find examples of making scatterplots and fitting regression lines. Check out the notebook [here]()
+
+
+
 ## Mon 3/21
 
 Reflecting back on last week, I spent 3 days on basic stats and 2 on the ML book. I'm really tempted to keep on 100% on the ML book, it's more fun :) But I believe having a strong foundation in probability and stats will be important in the long run as I get closer to the underlying stats for bayesian methods, graphical models etc. So I will resume with [Stanford's online course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/info) and perhaps this week I will get far enough that it will begin to overlap with the [All of Statistics book](http://www.stat.cmu.edu/~larry/all-of-statistics/) that I intend to work through along with some problem sets available online within some of the CMU probability courses (e.g [here's one](http://www.stat.cmu.edu/~larry/=stat705/)), which begins with random variables, conditional probability and Bayes' theorem. 
