@@ -13,6 +13,7 @@ To solidify the two variable analysis concepts from earlier in the week, spent s
 
 IPython, numpy and scipy continue to shine, was really easy to find examples of making scatterplots and fitting regression lines, and has been fun getting my Python legs back. Check out the notebook [here](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-player-stats/NBA%20Player%20Stats.ipynb), here's a little example comparing the relationship between weight and rebounds:
 
+
 <img src="ll-files/nba-player-scatter.png" width=800>
 
 
