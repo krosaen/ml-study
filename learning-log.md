@@ -2,7 +2,11 @@
 
 I don't anticipate this being of much use to anyone (nor much long term use to even myself), but it's helpful to reflect on what I studied each day for a bit to help make it stick.
 
+## Thu 3/24
 
+I spent an hour flipping through [Python for Data Analysis](http://www.amazon.com/gp/product/1449319793) to see if anything caught my eye given I've spent some type with IPython notebooks, numpy and a little pandas, and in fact it became clear there's a way easier way to do some of the exploratory scatterplots that I was doing by hand yesterday. Here's [another notebook](#) using a pandas data frame to load in the same nba player data set and quickly exploring two variable relationships using a scatter matrix.
+
+<img src="ll-files/nba-scatter.png" width=864>
 
 ## Wed 3/23
 
