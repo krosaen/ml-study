@@ -17,7 +17,7 @@ def train_perceptron(observations, labels, learning_rate=0.1, max_training_itera
     :return: (prediction_fn, weights_log, errors_log)
     """
     the_weights = np.zeros(1 + observations.shape[1])
-    weights_log = [np.copy(the_weights)]
+    weights_log = []
     errors_log = []
 
     def net_input(observation, weights):
@@ -28,13 +28,13 @@ def train_perceptron(observations, labels, learning_rate=0.1, max_training_itera
 
     for _ in range(max_training_iterations):
         errors = 0
+        weights_log.append(np.copy(the_weights))
         for observation, correct_output in zip(observations, labels):
             weight_delta = learning_rate * (correct_output - predict(observation))
             the_weights[1:] += weight_delta * observation
             the_weights[0] += weight_delta
             errors += int(weight_delta != 0.0)
         errors_log.append(errors)
-        weights_log.append(np.copy(the_weights))
         if errors == 0:
             break
 

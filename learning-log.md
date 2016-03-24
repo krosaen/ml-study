@@ -10,6 +10,8 @@ I was avoiding using pandas for csv munging because it seemed like overkill, but
 
 <img src="ll-files/nba-scatter.png" width=864>
 
+And now back to the python ML book for the rest of the day.
+
 ## Wed 3/23
 
 To solidify the two variable analysis concepts from earlier in the week, spent some time looking at Q->Q comparison of player stats from the 2014-2015 NBA season (spent some time Monday getting the data set). 
