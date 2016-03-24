@@ -11,10 +11,25 @@ To solidify the two variable analysis concepts from earlier in the week, spent s
 - comparing two stat categories in a Q->Q scatter plots with best fit linear regression lines and correlation coefficients (also adding 3rd C dimension by labeling player positions)
 - some C->Q comparisons of stats across guard / forward / center positions
 
-IPython, numpy and scipy continue to shine, was really easy to find examples of making scatterplots and fitting regression lines, and has been fun getting my Python legs back. Check out the notebook [here](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-player-stats/NBA%20Player%20Stats.ipynb), here's a little example comparing the relationship between weight and rebounds:
-
+IPython, numpy and scipy continue to shine, was really easy to find examples of making scatterplots and fitting regression lines, and has been fun getting my Python legs back. Check out the notebook [here](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-player-stats/NBA%20Player%20Stats.ipynb), here's a little example comparing the relationship between weight and rebounds per game:
 
 <img src="ll-files/nba-player-scatter.png" width=800>
+
+## Sampling
+
+Towards end of day moved onto the next section of the stanford online class, [Producing Data: Sampling](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/courseware/pd_sampling/_m1_sampling/).
+
+Sampling methods:
+- simple random sampling: randomly choose N from population (equivalent to picking name out of a hat)
+- cluster sampling: given a population divided into many groups, randomly choose N groups and use all members for your population
+- stratified sampling: given a population divided into groups, randomly choose a subset within each group
+- systematic sampling: choose at a regular interval, e.g every 50th person, or first person to walk in room each hour
+- multi-stage sampling: first choose random cluster, then randomly choose within each (stratified limited to subset of clusters). could be more complicated chains of stages going between simple, cluster and stratified.
+
+Crappy sampling methods:
+- volunteer sample: ask a population to fill out a survey, only those who agree are included
+- convenience sample: ask the next 5 people who walk by
+
 
 
 ## Mon 3/21
