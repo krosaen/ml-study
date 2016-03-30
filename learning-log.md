@@ -4,7 +4,7 @@ I don't anticipate this being of much use to anyone (nor much long term use to e
 
 ## Wed 3/30
 
-Continuing on in chapter 2, we drill a little deeper into how the learning rate affects convergence. My [chapter 2 notebook]() has been updated to show this analysis, but what's cool is that after finding that it takes a really small learning rate of 0.001 to converge, you can regularlize the training samples (a form of feature scaling) and then converge much faster with a learning rate of 0.01:
+Continuing on in chapter 2, we drill a little deeper into how the learning rate affects convergence. My [chapter 2 notebook](https://github.com/krosaen/ml-study/blob/master/python-ml-book/ch02/ch02.ipynb) has been updated to show this analysis, but what's cool is that after finding that it takes a really small learning rate of 0.001 to converge, you can regularlize the training samples (a form of feature scaling) and then converge much faster with a learning rate of 0.01:
 
 <img src="ll-files/adeline-learning-rates.png" width=835>
 
