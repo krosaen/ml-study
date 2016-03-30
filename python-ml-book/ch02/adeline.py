@@ -1,5 +1,6 @@
 """
-Implementation of perceptron algorithm from Chapter 2 of "Python Machine Learning"
+Implementation of ADAptive LInear NEuron (Adaline) algorithm from Chapter 2 of
+"Python Machine Learning"
 """
 import numpy as np
 
@@ -42,5 +43,4 @@ def train_adeline(observations, labels, learning_rate=0.0001, max_training_itera
         if num_errors == 0:
             break
 
-    # return predict, weights_log, raw_outputs_log, errors_log, num_errors_log
     return predict, weights_log, num_errors_log
