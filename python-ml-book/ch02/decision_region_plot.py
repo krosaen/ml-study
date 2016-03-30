@@ -5,7 +5,8 @@ Helper function for plotting decision regions from Chapter 2 of Python Machine L
 from matplotlib.colors import ListedColormap
 
 
-def plot_decision_regions(plt, observations, labels, predict_fn, weights, resolution=0.02):
+def plot_decision_regions(plt, observations, labels, predict_fn, weights, resolution=0.02,
+                          xlabel='sepal length [cm]', ylabel='petal length [cm]'):
     # setup marker generator and color map
     markers = ('s', 'x', 'o', '^', 'v')
     colors = ('red', 'blue', 'lightgreen', 'gray', 'cyan')
@@ -27,8 +28,8 @@ def plot_decision_regions(plt, observations, labels, predict_fn, weights, resolu
         plt.scatter(x=observations[labels == cl, 0], y=observations[labels == cl, 1],
                     alpha=0.8, c=cmap(idx),
                     marker=markers[idx], label=cl)
-    plt.xlabel('sepal length [cm]')
-    plt.ylabel('petal length [cm]')
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.legend(loc='upper left')
 
     plt.tight_layout()
