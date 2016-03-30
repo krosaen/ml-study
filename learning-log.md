@@ -38,6 +38,8 @@ but I'm glad I went through this pain as I understand it much better than had I 
 
 just as the book described a page later :) 
 
+[Here's my final solution](https://github.com/krosaen/ml-study/blob/master/python-ml-book/ch02/adeline.py)
+
 
 ## Thu 3/24
 
