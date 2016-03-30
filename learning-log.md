@@ -2,6 +2,14 @@
 
 I don't anticipate this being of much use to anyone (nor much long term use to even myself), but it's helpful to reflect on what I studied each day for a bit to help make it stick, and sometimes I write as if I'm attempting to explain the same concepts I read about to someone else, which also helps the ideas sick, even if I'm not going to be as complete in my explanation as the original source material.
 
+## Wed 3/30
+
+Continuing on in chapter 2, we drill a little deeper into how the learning rate affects convergence. My [chapter 2 notebook]() has been updated to show this analysis, but what's cool is that after finding that it takes a really small learning rate of 0.001 to converge, you can regularlize the training samples (a form of feature scaling) and then converge much faster with a learning rate of 0.01:
+
+<img src="ll-files/adeline-learning-rates.png" width=835>
+
+<img src="ll-files/adeline-regularized.png" width=500>
+
 ## Mon 3/28, Tue 3/29
 
 Back at chapter 2 of Python Machine Learning: after implementing the basic perceptron algorithm there's a follow up to implement a slightly more sophisticated single neuron model: ADAptive LInear NEuron (Adaline). 
