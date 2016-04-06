@@ -19,7 +19,8 @@ def train_adeline(observations, labels, learning_rate=0.0001, max_training_itera
     """
     the_weights = np.zeros(1 + observations.shape[1])
     weights_log = []
-    errors_log = []
+    num_errors_log = []
+    squared_error_log = []
 
     def net_input(observations, weights):
         return np.dot(observations, weights[1:]) + weights[0]
@@ -40,9 +41,9 @@ def train_adeline(observations, labels, learning_rate=0.0001, max_training_itera
 
         squared_errors = (errors ** 2).sum() / 2.0
         num_errors = (quantized_output(raw_outputs) != labels).sum()
-        # errors_log.append(squared_errors)
-        errors_log.append(num_errors)
+        squared_error_log.append(squared_errors)
+        num_errors_log.append(num_errors)
         if num_errors == 0:
             break
 
-    return predict, weights_log, errors_log
+    return predict, weights_log, squared_error_log, num_errors_log
