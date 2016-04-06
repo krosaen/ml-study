@@ -39,8 +39,9 @@ def train_adeline(observations, labels, learning_rate=0.0001, max_training_itera
         the_weights[0] += learning_rate * np.sum(errors)
 
         squared_errors = (errors ** 2).sum() / 2.0
-        errors_log.append(squared_errors)
         num_errors = (quantized_output(raw_outputs) != labels).sum()
+        # errors_log.append(squared_errors)
+        errors_log.append(num_errors)
         if num_errors == 0:
             break
 
