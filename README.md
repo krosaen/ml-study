@@ -1,3 +1,3 @@
 ## ML Study
 
-Various materials of ML study.
+Various materials of my [ML study](http://karlrosaen.com/ml/).
