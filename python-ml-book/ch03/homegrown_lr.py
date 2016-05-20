@@ -26,17 +26,20 @@ def homegrown_lr(observations, labels, learning_rate=0.02, max_training_iteratio
         return 1.0 / (1.0 + np.exp(-z))
 
     def net_input(observations, weights):
-        return sigmoid(np.dot(observations, weights[1:]) + weights[0])
+        return np.dot(observations, weights[1:]) + weights[0]
+
+    def activation(observations, weights):
+        return sigmoid(net_input(observations, weights))
 
     def quantized_output(output):
-        return np.where(output >= 0.0, 1, -1)
+        return np.where(output >= 0.5, 1, 0)
 
     def predict(observations, weights=the_weights):
-        return quantized_output(net_input(observations, weights))
+        return quantized_output(activation(observations, weights))
 
     for _ in range(max_training_iterations):
         weights_log.append(np.copy(the_weights))
-        raw_outputs = net_input(observations, the_weights)
+        raw_outputs = activation(observations, the_weights)
         errors = labels - raw_outputs
         weight_deltas = learning_rate * np.dot(observations.transpose(), errors)
         the_weights[1:] += weight_deltas
