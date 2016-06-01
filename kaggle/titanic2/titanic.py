@@ -1,5 +1,5 @@
 from sklearn.preprocessing import StandardScaler
-
+import pandas as pd
 
 def make_preprocesser(training_data):
     """
@@ -22,8 +22,8 @@ def make_preprocesser(training_data):
      'Parch',
      'Ticket',      # omit (doesn't seem like low hanging fruit, could look more closely for pattern later)
      'Fare',        # keep, as fare could be finer grained proxy for socio economic status, sense of entitlement / power in getting on boat
-     'Cabin',       # omit (10% are missing values, could look more closely later, one idea would be to break this out into a few different boolean variables for major section, A->E)
-     'Embarked']    # omit (could one-hot encode it, but can't see how this would affect survivorship, let's be lazy to start)
+     'Cabin',       # one hot encode using first letter as cabin as the cabin sector
+     'Embarked']    # one hot encode
 
     Params:
         df: pandas.DataFrame containing the training data
@@ -32,7 +32,7 @@ def make_preprocesser(training_data):
     """
 
     def pick_features(df):
-        return df[['PassengerId', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']]
+        return df[['PassengerId', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Cabin', 'Embarked']]
 
     # save median Age so we can use it to fill in missing data consistently
     # on any dataset
@@ -41,14 +41,42 @@ def make_preprocesser(training_data):
     def fix_missing(df):
         return df.fillna(median_age_series)
 
-    def map_categorical(df):
+    def map_sex(df):
         df['Sex'] = df['Sex'].map({'male': 0, 'female': 1})
+        return df
+
+    def one_hot_cabin(df):
+        def cabin_sector(cabin):
+            if isinstance(cabin, str):
+                return cabin[0].lower()
+            else:
+                return cabin
+
+        df[['cabin_sector']] = df[['Cabin']].applymap(cabin_sector)
+        one_hot = pd.get_dummies(df['cabin_sector'], prefix="cabin_sector")
+
+        interesting_cabin_sectors = ["cabin_sector_{}".format(l) for l in 'bcde']
+
+        for column, _ in one_hot.iteritems():
+            if column.startswith('cabin_sector_') and column not in interesting_cabin_sectors:
+                one_hot = one_hot.drop(column, axis=1)
+
+        df = df.join(one_hot)
+
+        df = df.drop('Cabin', axis=1)
+        df = df.drop('cabin_sector', axis=1)
+        return df
+
+    def one_hot_embarked(df):
+        one_hot = pd.get_dummies(df['Embarked'], prefix="embarked")
+        df = df.join(one_hot)
+        df = df.drop('Embarked', axis=1)
         return df
 
     # We want standard scaling fit on the training data, so we get a scaler ready
     # for application now. It needs to be applied to data that already has the other
     # pre-processing applied.
-    training_data_all_but_scaled = map_categorical(fix_missing(pick_features(training_data)))
+    training_data_all_but_scaled = map_sex(fix_missing(pick_features(training_data)))
     stdsc = StandardScaler()
     stdsc.fit(training_data_all_but_scaled[['Pclass', 'Age', 'SibSp', 'Parch', 'Fare']])
 
@@ -56,6 +84,9 @@ def make_preprocesser(training_data):
         df[['Pclass', 'Age', 'SibSp', 'Parch', 'Fare']] = \
             stdsc.transform(df[['Pclass', 'Age', 'SibSp', 'Parch', 'Fare']])
         df[['Sex']] = df[['Sex']].applymap(lambda x: 1 if x == 1 else -1)
+        for column, _ in df.iteritems():
+            if column.startswith('cabin_sector_') or column.startswith('embarked_'):
+                df[[column]] = df[[column]].applymap(lambda x: 1 if x == 1 else -1)
         return df
 
     def preprocess(df, scale=True):
@@ -65,7 +96,7 @@ def make_preprocesser(training_data):
         Params:
             scale: whether to apply feature scaling. E.g with random forests feature scaling isn't necessary.
         """
-        all_but_scaled = map_categorical(fix_missing(pick_features(df)))
+        all_but_scaled = one_hot_embarked(one_hot_cabin(map_sex(fix_missing(pick_features(df)))))
         if scale:
             return scale_df(all_but_scaled)
         else:

@@ -36,8 +36,10 @@ class TestStuff(unittest.TestCase):
         preprocess_fn = titanic.make_preprocesser(td)
 
         td_preprocessed = preprocess_fn(td, scale=False)
+        cabin_sectors = ["cabin_sector_{}".format(l) for l in 'bcde']
+        embarked_hot = ["embarked_{}".format(l) for l in "CQS"]
         npt.assert_array_equal(
-            ['PassengerId', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare'],
+            ['PassengerId', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare'] + cabin_sectors + embarked_hot,
             td_preprocessed.columns,
             'Picked columns')
 
