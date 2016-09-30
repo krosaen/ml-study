@@ -2,3 +2,7 @@
 .ipynb_checkpoints
 python-ml-book/.idea/*
 .idea
+*.zip
+kaggle/forest-cover-type*/*csv
+kaggle/forest-cover-type*/*csv
+kaggle/predicting-red-hat-business-value*/*csv
